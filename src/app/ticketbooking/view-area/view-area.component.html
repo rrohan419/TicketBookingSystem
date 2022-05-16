@@ -1,0 +1,39 @@
+
+ <div class="container-fluid">
+  <div class="list-group">
+      <ul >
+          <li class="list-group-item font-weight-bold text-uppercase text-center"><h1>Ticket Details</h1></li>
+        
+          
+          <li class="list-group-item list-group-item-primary"><h3>Movie Name : {{data.movie}}</h3></li>
+          <li class="list-group-item list-group-item-secondary"><h3>Time : {{data.time}}</h3></li>
+          <li class="list-group-item list-group-item-success"><h3>Seat Number : {{data.seat}}</h3></li>
+          <li class="list-group-item list-group-item-danger"><h3>Number of Tickets : {{data.number}}</h3></li>
+          <li class="list-group-item list-group-item-warning"><h3>Food : {{data.foodtype}}</h3></li>
+          <li class="list-group-item list-group-item-info"><h3>Seat Type : {{data.seattype}}</h3></li>
+        </ul>
+  </div>
+  <div class="container-fluid">
+      <table class="table">
+        <thead style="background-color: powderblue;">
+            <tr>
+                <th scope="col">Seat Price</th>
+                <th scope="col">Food Price</th>
+                <th scope="col">number of tickets</th>
+                <th scope="col">Final Bill</th>
+            </tr>
+        </thead>
+        <tbody style="background-color: rgb(17, 186, 247);">
+            <tr>
+                <td>{{seatprice}}</td>
+                <td>{{foodPrice}}</td>
+                <td>{{data.number}}</td>
+                <td>{{finalBill}}</td>
+            </tr> 
+        </tbody>
+      </table>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-success " routerLink="/ticket">view ticket</button>
+  </div>
+  </div>

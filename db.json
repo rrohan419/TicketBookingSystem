@@ -1,0 +1,87 @@
+{
+  "seat": [
+    {
+      "id": 1,
+      "seat_no": "A01"
+    },
+    {
+      "id": 3,
+      "seat_no": "A03"
+    },
+    {
+      "id": 4,
+      "seat_no": "A04"
+    },
+    {
+      "id": 5,
+      "seat_no": "A05"
+    },
+    {
+      "id": 6,
+      "seat_no": "A06"
+    },
+    {
+      "id": 7,
+      "seat_no": "A07"
+    },
+    {
+      "id": 8,
+      "seat_no": "A08"
+    },
+    {
+      "id": 9,
+      "seat_no": "A09"
+    },
+    {
+      "id": 10,
+      "seat_no": "A10"
+    },
+    {
+      "id": 11,
+      "seat_no": "A11"
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "movieId": 1,
+      "moviename": "Movie 1"
+    },
+    {
+      "id": 2,
+      "movieId": 2,
+      "moviename": "Movie 2"
+    },
+    {
+      "id": 3,
+      "movieId": 3,
+      "moviename": "Movie 3"
+    }
+  ],
+  "timings": [
+    {
+      "id": 1,
+      "time": "9:30AM"
+    },
+    {
+      "id": 2,
+      "time": "10:40AM"
+    },
+    {
+      "id": 3,
+      "time": "12:30PM"
+    },
+    {
+      "id": 4,
+      "time": "3:00PM"
+    },
+    {
+      "id": 5,
+      "time": "5:40PM"
+    },
+    {
+      "id": 6,
+      "name": "8:00PM"
+    }
+  ]
+}
