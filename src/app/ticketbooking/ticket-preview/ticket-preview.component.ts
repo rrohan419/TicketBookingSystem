@@ -1,13 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Seats } from 'src/app/seats';
+import Swal from 'sweetalert2';
+
 import { ApiService } from 'src/app/services/api.service';
 import { TicketbookingComponent } from '../ticketbooking.component'
 
 @Component({
   selector: 'app-ticket-preview',
   templateUrl: './ticket-preview.component.html',
-  styleUrls: ['./ticket-preview.component.css']
+  styleUrls: ['./ticket-preview.component.scss']
 })
 export class TicketPreviewComponent implements OnInit {
   date :any = new Date().toLocaleDateString();
@@ -18,6 +20,7 @@ export class TicketPreviewComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    
     // console.log(TicketbookingComponent.collectiveData.value.number);
     // this.seatNumberDelete();
   }

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataComponent } from '../data/data.component';
+import Swal from 'sweetalert2';
 import { Seats } from '../seats';
 import { ApiService } from '../services/api.service';
 
@@ -12,7 +12,7 @@ import { ApiService } from '../services/api.service';
   selector: 'app-ticketbooking',
   // templateUrl: './ticketbooking.component.html',
   templateUrl: './ticketbooking.component.html',
-  styleUrls: ['./ticketbooking.component.css']
+  styleUrls: ['./ticketbooking.component.scss']
 })
 export class TicketbookingComponent implements OnInit {
   formdetails !:FormGroup;
@@ -48,8 +48,8 @@ export class TicketbookingComponent implements OnInit {
     this.apiService.getSeats(url).subscribe(data=>{
       this.seatnumber=data;
       this.copySeatnumber=data;
-      console.warn(this.seatnumber);
-      console.log(this.copySeatnumber)
+      // console.warn(this.seatnumber);
+      // console.log(this.copySeatnumber)
     });
     // if(this.flag===false)
     // {
@@ -71,7 +71,7 @@ export class TicketbookingComponent implements OnInit {
     });
     
     
-    
+    console.log(this.formdetails,"hey");
   }
   
 
@@ -145,14 +145,18 @@ export class TicketbookingComponent implements OnInit {
     // console.log(TicketbookingComponent.collectiveData);
     this.selectingSeat();
     this.delete();
-    DataComponent.creatingTable();
+    // DataComponent.creatingTable();
     this.router.navigate(['bookingdetails']);
-    alert("movie-name : "+TicketbookingComponent.collectiveData.movie+'\n'+
-          "movie-time : "+TicketbookingComponent.collectiveData.time+'\n'+
-          "seat-number : "+TicketbookingComponent.collectiveData.seat +'\n'+
-          "total-tickets : "+TicketbookingComponent.collectiveData.number+'\n'+
-          "food-type : "+TicketbookingComponent.collectiveData.foodtype+'\n'+
-          "seat-type : "+TicketbookingComponent.collectiveData.seattype);
+    // alert("movie-name : "+TicketbookingComponent.collectiveData.movie+'\n'+
+    //       "movie-time : "+TicketbookingComponent.collectiveData.time+'\n'+
+    //       "seat-number : "+TicketbookingComponent.collectiveData.seat +'\n'+
+    //       "total-tickets : "+TicketbookingComponent.collectiveData.number+'\n'+
+    //       "food-type : "+TicketbookingComponent.collectiveData.foodtype+'\n'+
+    //       "seat-type : "+TicketbookingComponent.collectiveData.seattype);
+    Swal.fire({
+      title: "Booking Details",
+      icon: "success"
+    })
   }
   copyDetails()
   {

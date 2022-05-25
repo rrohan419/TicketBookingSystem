@@ -5,7 +5,7 @@ import { TicketbookingComponent } from '../ticketbooking/ticketbooking.component
 @Component({
   selector: 'app-data',
   templateUrl: './data.component.html',
-  styleUrls: ['./data.component.css']
+  styleUrls: ['./data.component.scss']
 })
 export class DataComponent implements OnInit {
  static bookingDetails:{movie:'', time:'', seat_number:Seats[],food_opted:''}[]=[];

@@ -5,7 +5,7 @@ import { TicketbookingComponent } from '../ticketbooking.component'
 @Component({
   selector: 'app-view-area',
   templateUrl: './view-area.component.html',
-  styleUrls: ['./view-area.component.css']
+  styleUrls: ['./view-area.component.scss']
 })
 export class ViewAreaComponent implements OnInit {
   seatprice=120;
@@ -17,6 +17,7 @@ export class ViewAreaComponent implements OnInit {
   constructor() { 
     // this.data
     // this.getResult()
+    console.log(this.data,"view area component")
     
   }
   ngOnInit(): void {
@@ -58,6 +59,7 @@ export class ViewAreaComponent implements OnInit {
   {
     this.getPrice();
     this.finalBill =(this.seatprice+this.foodPrice)*this.data.number; 
+    
      console.log(this.finalBill);
   }
 }
