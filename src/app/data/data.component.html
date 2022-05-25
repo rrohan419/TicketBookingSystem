@@ -1,0 +1,32 @@
+<div>
+  <div style="text-align: center;">
+    <button class="btn btn-danger mt-3" routerLink="/">Home</button>
+  </div>
+    <table class="table table-info mt-3">
+        <thead>
+          <tr class="text-center">
+            <th scope="col">#</th>
+            <th scope="col">Movie</th>
+            <th scope="col">Time</th>
+            <th scope="col">Seat Number</th>
+            <th scope="col">Food Type</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let data of copyBookingDetails; index as i" class="text-center">
+          <tr>
+            <td >{{i}}</td>
+            <td>{{data.movie}}</td>
+            <td>{{data.time}}</td>
+            <td>{{data.seat_number}}</td>
+            <td>{{data.food_opted}}</td>
+            <td>
+              <!-- <div class="btn btn-primary" routerLink="/productdetail" (click)="getSingleData()"> list</div> -->
+              <!-- <button class="btn btn-primary"><a style="color: aliceblue;" ">detail</a></button> -->
+              <!-- <button class="btn btn-success mx-3">edit</button> -->
+              <!-- <button class="btn btn-danger ml-3" (click)="deleteData(data.id)">delete</button> -->
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+</div>

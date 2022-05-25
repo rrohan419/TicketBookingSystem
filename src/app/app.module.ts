@@ -7,16 +7,21 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { TicketbookingComponent } from './ticketbooking/ticketbooking.component';
 import { ViewAreaComponent } from './ticketbooking/view-area/view-area.component';
 import { RouterModule, Routes } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TicketPreviewComponent } from './ticketbooking/ticket-preview/ticket-preview.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DataComponent } from './data/data.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 const routes: Routes=[
-  {path: '', component: WelcomeComponent},
+  {path : '', redirectTo:'home',pathMatch:'full'},
+  {path: 'home', component: WelcomeComponent},
   {path: 'bookingdetails', component: ViewAreaComponent },
   {path: 'booking', component:TicketbookingComponent},
-  {path: 'ticket', component:TicketPreviewComponent}
+  {path: 'ticket', component:TicketPreviewComponent},
+  {path: 'allTickets', component:DataComponent},
+  {path: '**', component: ErrorPageComponent}
 
 ];
 
@@ -26,11 +31,15 @@ const routes: Routes=[
     WelcomeComponent,
     TicketbookingComponent,
     ViewAreaComponent,
-    TicketPreviewComponent
+    TicketPreviewComponent,
+    DataComponent,
+    ErrorPageComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes)

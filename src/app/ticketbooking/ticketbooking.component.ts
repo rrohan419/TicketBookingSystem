@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DataComponent } from '../data/data.component';
 import { Seats } from '../seats';
 import { ApiService } from '../services/api.service';
 
@@ -28,7 +29,7 @@ export class TicketbookingComponent implements OnInit {
   foods = ['veg','nonveg','none'];
   seatType =['Regular','Exclusive','Recliner'];
   seatnumber:Seats[]=[];
-  copySeatnumber:Seats[]=this.seatnumber;
+  copySeatnumber:Seats[]=[];
 
   num:any=[];
   public static ticketBooked:Seats[]=[];
@@ -63,7 +64,7 @@ export class TicketbookingComponent implements OnInit {
       movie: new FormControl('',Validators .required),
       time: new FormControl('',Validators.required),
       seat: new FormControl('',Validators.required),
-      number: new FormControl('',[Validators.required,Validators.min(0)]),
+      number: new FormControl('',[Validators.required,Validators.min(1)]),
       foodtype: new FormControl('',Validators.required),
       seattype: new FormControl('',Validators.required)
       
@@ -84,7 +85,10 @@ export class TicketbookingComponent implements OnInit {
         if(this.seatnumber[i].seat_no ===this.selectedSeatNumber)
         {
           this.index=i;
-          TicketbookingComponent.ticketBooked = this.seatnumber.splice(this.index,this.formdetails.value.number);
+          TicketbookingComponent.ticketBooked = this.seatnumber.slice(this.index,this.formdetails.value.number+1);
+          console.log(TicketbookingComponent.ticketBooked,"selectingSeat()");
+          console.log(this.formdetails.value.number);
+          console.log(this.index,"index");
           
         }
       } 
@@ -94,7 +98,7 @@ export class TicketbookingComponent implements OnInit {
   
   delete()
   {
-    console.log(this.copySeatnumber+"test");
+    // console.log(this.copySeatnumber+"test");
     for(let j=0;j<TicketbookingComponent.ticketBooked.length;j++)
     {
       console.log(TicketbookingComponent.ticketBooked[j].id+"test"+j);
@@ -141,11 +145,11 @@ export class TicketbookingComponent implements OnInit {
     // console.log(TicketbookingComponent.collectiveData);
     this.selectingSeat();
     this.delete();
-    
+    DataComponent.creatingTable();
     this.router.navigate(['bookingdetails']);
     alert("movie-name : "+TicketbookingComponent.collectiveData.movie+'\n'+
           "movie-time : "+TicketbookingComponent.collectiveData.time+'\n'+
-          "seat-number : "+TicketbookingComponent.collectiveData.seat+'\n'+
+          "seat-number : "+TicketbookingComponent.collectiveData.seat +'\n'+
           "total-tickets : "+TicketbookingComponent.collectiveData.number+'\n'+
           "food-type : "+TicketbookingComponent.collectiveData.foodtype+'\n'+
           "seat-type : "+TicketbookingComponent.collectiveData.seattype);
