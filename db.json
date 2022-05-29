@@ -93,6 +93,42 @@
       "foodtype": "veg",
       "seattype": "Regular",
       "id": 1
+    },
+    {
+      "movie": "Movie2",
+      "time": "11:45 AM",
+      "seat": "A03",
+      "number": 3,
+      "foodtype": "veg",
+      "seattype": "Regular",
+      "id": 2
+    },
+    {
+      "movie": "Movie1",
+      "time": "9:30 AM",
+      "seat": "A01",
+      "number": 3,
+      "foodtype": "veg",
+      "seattype": "Regular",
+      "id": 3
+    },
+    {
+      "movie": "Movie3",
+      "time": "9:30 AM",
+      "seat": "A04",
+      "number": 3,
+      "foodtype": "nonveg",
+      "seattype": "Regular",
+      "id": 4
+    },
+    {
+      "movie": "Movie5",
+      "time": "9:30 AM",
+      "seat": "A01",
+      "number": 4,
+      "foodtype": "",
+      "seattype": "Regular",
+      "id": 5
     }
   ]
 }

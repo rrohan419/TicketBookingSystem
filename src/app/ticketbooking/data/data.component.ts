@@ -11,7 +11,7 @@ import { TicketbookingComponent } from '../ticketbooking.component';
 export class DataComponent implements OnInit {
   
   products:Seats[]=[]
- 
+  seatbooked:any;
   constructor(private apiServices:ApiService) {
     this.apiServices.getSeats("users").subscribe(data=>{
       this.products=data;
@@ -22,7 +22,8 @@ export class DataComponent implements OnInit {
 
   ngOnInit(): void {
     // this.creatingTable();
-    
+    this.seatbooked= TicketbookingComponent.ticketBooked;
+    console.warn(this.seatbooked,"aaaaaaaa");
    
    
   }
