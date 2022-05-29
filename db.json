@@ -83,5 +83,16 @@
       "id": 6,
       "name": "8:00PM"
     }
+  ],
+  "users": [
+    {
+      "movie": "Movie1",
+      "time": "11:45 AM",
+      "seat": "A01",
+      "number": 2,
+      "foodtype": "veg",
+      "seattype": "Regular",
+      "id": 1
+    }
   ]
 }

@@ -29,9 +29,10 @@ export class ApiService {
   {
     return this.http.get(this.apiUrl+url+id);
   }
-  addMovie(url:any, movieName:any )
+  saveUsers(data:Seats)
   {
-      return this.http.post((this.apiUrl+url),movieName);
+    console.log(data,"services");
+    return this.http.post("http://localhost:3000/users",data);
   }
 }
 

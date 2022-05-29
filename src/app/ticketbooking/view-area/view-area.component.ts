@@ -15,9 +15,6 @@ export class ViewAreaComponent implements OnInit {
   data : any= TicketbookingComponent.collectiveData;
 
   constructor() { 
-    // this.data
-    // this.getResult()
-    console.log(this.data,"view area component")
     
   }
   ngOnInit(): void {
@@ -52,8 +49,6 @@ export class ViewAreaComponent implements OnInit {
     {
       this.foodPrice = 120;
     }
-   
-    console.log(this.seatprice);
   }
   printRecipt()
   {

@@ -10,8 +10,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TicketPreviewComponent } from './ticketbooking/ticket-preview/ticket-preview.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DataComponent } from './data/data.component';
+import { DataComponent } from './ticketbooking/data/data.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { PriceComponent } from './price/price.component';
 
 
 
@@ -22,6 +23,7 @@ const routes: Routes=[
   {path: 'booking', component:TicketbookingComponent},
   {path: 'ticket', component:TicketPreviewComponent},
   {path: 'allTickets', component:DataComponent},
+  {path: 'price', component: PriceComponent},
   {path: '**', component: ErrorPageComponent}
 
 ];
@@ -35,6 +37,7 @@ const routes: Routes=[
     TicketPreviewComponent,
     DataComponent,
     ErrorPageComponent,
+    PriceComponent,
     
   ],
   imports: [

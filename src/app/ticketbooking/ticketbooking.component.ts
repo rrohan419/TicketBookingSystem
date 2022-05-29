@@ -71,7 +71,7 @@ export class TicketbookingComponent implements OnInit {
     });
     
     
-    console.log(this.formdetails,"hey");
+    
   }
   
 
@@ -144,7 +144,9 @@ export class TicketbookingComponent implements OnInit {
     this.copyDetails();
     // console.log(TicketbookingComponent.collectiveData);
     this.selectingSeat();
-    this.delete();
+    this.apiService.saveUsers(TicketbookingComponent.collectiveData).subscribe((result)=>{
+      console.log(result,"suscribe data return");
+    });
     // DataComponent.creatingTable();
     this.router.navigate(['bookingdetails']);
     // alert("movie-name : "+TicketbookingComponent.collectiveData.movie+'\n'+
@@ -155,7 +157,7 @@ export class TicketbookingComponent implements OnInit {
     //       "seat-type : "+TicketbookingComponent.collectiveData.seattype);
     Swal.fire({
       title: "Booking Details",
-      icon: "success"
+      icon: "info"
     })
   }
   copyDetails()

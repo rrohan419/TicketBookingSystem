@@ -12,13 +12,13 @@
             <th scope="col">Food Type</th>
           </tr>
         </thead>
-        <tbody *ngFor="let data of copyBookingDetails; index as i" class="text-center">
+        <tbody *ngFor="let data of products; index as i" class="text-center">
           <tr>
-            <td >{{i}}</td>
+            <td >{{i+1}}</td>
             <td>{{data.movie}}</td>
             <td>{{data.time}}</td>
-            <td>{{data.seat_number}}</td>
-            <td>{{data.food_opted}}</td>
+            <td>{{data.seat}}</td>
+            <td>{{data.foodtype}}</td>
             <td>
               <!-- <div class="btn btn-primary" routerLink="/productdetail" (click)="getSingleData()"> list</div> -->
               <!-- <button class="btn btn-primary"><a style="color: aliceblue;" ">detail</a></button> -->
